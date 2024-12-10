@@ -19,7 +19,29 @@ module.exports = {
   content: ["./src/**/*.{html,js,php}"],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'blue-fon': '#00365ECC',
+        'dark-blue': '#172F5B',
+        'red-fon': '#E834264D',
+        'orange': '#E83426',
+      },
+      fontFamily: {
+        'body': ['"Golos Text"', 'sans-serif'],
+      },
+      screens: {
+        'xs': '400px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+        '3xl': '1800px',
+      },
+      borderWidth: {
+        '1': '1px',
+      },
+    },
   },
   plugins: plugins,
 };

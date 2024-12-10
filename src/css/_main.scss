@@ -1,184 +1,95 @@
 //All styles can be added here.
-.hero-heading {
-  @apply mb-10 text-4xl font-medium text-white;
+body {
+  @apply relative font-body text-base overflow-hidden;
 }
+h1 {
+  @apply text-white text-[32px] leading-[36px] 2xl:text-[64px] 2xl:leading-[80px] font-bold;
+}
+h2 {
+  @apply text-white text-3xl 2xl:text-5xl 2xl:leading-[56px] font-bold;
+}
+p {
+  @apply text-white;
+}
+.left-menu {
+  @apply fixed hidden lg:flex flex-col justify-center h-screen z-50 w-full max-w-[265px] border-r-1 border-white border-solid;
+}
+.mySwiperThumbs .swiper-slide-thumb-active .menu-btn {
+  @apply bg-red-fon;
+}
+.mySwiper .swiper-wrapper {
+  @apply h-screen;
+}
+.menu-btn {
+  @apply px-8 py-4 text-white text-start font-semibold text-sm transition-colors w-full;
 
-.instructions {
-  .sub-title {
-    @apply mb-5 border-b-2 border-gray-400 pb-2 text-xl font-medium text-gray-900;
-
-    & + p {
-      @apply mb-3;
-    }
-  }
-  .code {
-    @apply block w-full rounded border bg-gray-100 px-4 py-5 font-mono text-sm leading-normal text-gray-700 shadow;
-
-    &.pre {
-      @apply whitespace-pre-wrap;
-    }
-
-    em {
-      @apply opacity-75;
-    }
+  &:hover, &.active {
+    @apply bg-red-fon;
   }
 }
+.fon-img {
+  @apply relative;
 
-.social {
-  @apply block pt-6 text-gray-700;
+  &::after {
+    @apply absolute top-0 left-0 w-full h-screen bg-blue-fon;
+    content: "";
+  }
 
-  a {
-    @apply p-4 font-medium text-blue-500;
-
+  img {
+    @apply w-full h-screen object-cover object-center;
+  }
+}
+.on-fon {
+  @apply absolute z-50 bottom-0 left-0 flex w-full h-full justify-center items-end px-4 lg:px-0;
+  &.to-end {
+    @apply justify-end;
+  }
+}
+.block-text {
+  @apply flex flex-col gap-4 lg:gap-8;
+}
+.block-red-line {
+  @apply border-t-2 border-orange border-solid pt-4 lg:pt-10;
+}
+.btn {
+  @apply px-8 py-4 text-sm text-dark-blue bg-white transition-colors w-fit h-fit font-bold uppercase;
+  &:hover {
+    @apply bg-orange text-white;
+  }
+  &.btn-transparent {
+    @apply bg-transparent border-white px-[30px] py-3.5 border-solid border-1 rounded text-base text-white font-normal normal-case;
     &:hover {
-      @apply text-blue-700;
+      @apply bg-orange border-orange;
     }
   }
 }
-
-// highlights
-
-pre[class*="language-"] {
-  color: #f8fafc;
-  @apply max-w-2xl;
+.about-manufactory {
+  @apply overflow-hidden w-full relative;
+  .swiper-pagination {
+    @apply flex gap-4 text-start;
+    .swiper-pagination-bullet-active {
+      background: white!important;
+    }
+  }
+  .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom, .swiper-pagination-fraction {
+    @apply bottom-6 3xl:bottom-11;
+  }
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    @apply w-3.5 h-3.5 border-white border-2 border-solid opacity-100 m-0 bg-transparent;
+  }
 }
-
-.token.class-name,
-.token.function,
-.token.selector,
-.token.selector .class,
-.token.selector.class,
-.token.module,
-.token.tag {
-  color: #f472b6;
+.text-with-img {
+  @apply flex xl:gap-8 2xl:gap-[238px] items-end h-screen lg:justify-end xl:justify-start 2xl:justify-end xl:mr-0 lg:mr-20;
+  .slide-img {
+    @apply xl:max-w-[375px] xl:max-h-[700px] 3xl:max-w-[730px] 3xl:max-h-[800px] overflow-hidden hidden xl:block;
+    img {
+      @apply w-full h-screen object-cover object-center;
+    }
+  }
 }
-
-.token.attr-name,
-.token.important,
-.token.keyword,
-.token.pseudo-class,
-.token.rule {
-  color: #cbd5e1;
-}
-
-.token.attr-value,
-.token.class,
-.token.property,
-.token.string {
-  color: #7dd3fc;
-}
-
-.token.attr-equals,
-.token.punctuation {
-  color: #64748b;
-}
-
-.token.combinator,
-.token.comment,
-.token.operator {
-  color: #94a3b8;
-}
-
-.language-css .token.function,
-.token.unit {
-  color: #99f6e4;
-}
-
-code[class*="language-"],
-pre[class*="language-"] {
-  word-wrap: normal;
-  -webkit-hyphens: none;
-  hyphens: none;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  text-align: left;
-  white-space: pre;
-  word-break: normal;
-  word-spacing: normal;
-}
-
-code[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection,
-pre[class*="language-"] ::-moz-selection,
-pre[class*="language-"]::-moz-selection {
-  background: rgba(29, 59, 83, 0.99);
-  text-shadow: none;
-}
-
-code[class*="language-"] ::selection,
-code[class*="language-"]::selection,
-pre[class*="language-"] ::selection,
-pre[class*="language-"]::selection {
-  background: rgba(29, 59, 83, 0.99);
-  text-shadow: none;
-}
-
-.token.cdata,
-.token.comment,
-.token.prolog {
-  color: #94a3b8;
-  font-style: italic;
-}
-
-.token.punctuation {
-  color: #c792ea;
-}
-
-.token.deleted {
-  color: rgba(239, 83, 80, 0.56);
-  font-style: italic;
-}
-
-.token.keyword,
-.token.operator,
-.token.tag {
-  color: #f472b6;
-}
-
-.token.boolean {
-  color: #ff5874;
-}
-
-.token.number {
-  color: #f78c6c;
-}
-
-.token.builtin,
-.token.char,
-.token.constant,
-.token.function {
-  color: #f472b6;
-}
-
-.token.doctype,
-.token.selector {
-  color: #c792ea;
-  font-style: italic;
-}
-
-.token.attr-name,
-.token.inserted {
-  color: #addb67;
-  font-style: italic;
-}
-
-.language-css .token.string,
-.style .token.string,
-.token.entity,
-.token.string,
-.token.url {
-  color: #7dd3fc;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.class-name {
-  color: #ffcb8b;
-}
-
-.token.important,
-.token.regex,
-.token.variable {
-  color: #d6deeb;
+.shield {
+  @apply text-sm font-bold uppercase text-white bg-orange px-4 py-2 leading-4 w-fit;
 }
